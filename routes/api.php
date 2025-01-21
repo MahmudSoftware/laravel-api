@@ -23,5 +23,4 @@ use Illuminate\Support\Facades\Route;
 //     return response()->json(['message' => 'Hello World!']);
 // });
 
-Route::get('categories',[CategoryController::class,'index']);
-Route::post('categories/store',[CategoryController::class,'store']);
+Route::apiResource('categories', CategoryController::class);

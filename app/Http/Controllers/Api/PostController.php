@@ -3,24 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::latest()->get();
-        return response()->json([
-            'success' => true,
-            'message0'=>'Success',
-            'dta' => $categories
-
-        ]);
+        //
     }
 
     /**
@@ -36,20 +28,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-       
-        $dataValidator =  Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:255',
-        ]);
-
-        if($dataValidator->fails()){
-            return response()->json($dataValidator->getMessageBag(),422);
-        }
-        return response()->json($request->all());
+        //
     }
 
     /**
-     * Display the specified resource. 
+     * Display the specified resource.
      */
     public function show(string $id)
     {
